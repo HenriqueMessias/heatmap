@@ -1,2 +1,2 @@
-# heatmap
+# HeatMap
 Projeto Integrador 3
