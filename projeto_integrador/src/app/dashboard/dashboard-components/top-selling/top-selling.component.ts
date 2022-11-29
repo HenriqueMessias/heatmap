@@ -14,7 +14,7 @@ export class TopSellingComponent implements OnInit {
   public long: any= 0;
   topSelling:Product[];
 
-  constructor() { 
+  constructor() {
 
     this.topSelling=TopSelling;
   }
@@ -39,7 +39,7 @@ export class TopSellingComponent implements OnInit {
       chart.setOption(option);
       // get google map instance
       var gmap = chart.getModel().getComponent("gmap").getGoogleMap();
-      
+
       // Add some markers to map
       var marker = new google.maps.Marker({ position: gmap.getCenter() });
       marker.setMap(gmap);
@@ -54,6 +54,7 @@ export class TopSellingComponent implements OnInit {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
           if (position) {
+            console.log(position);
             this.lat = position.coords.latitude;
             this.long = position.coords.longitude;
             resolve({
@@ -70,7 +71,7 @@ export class TopSellingComponent implements OnInit {
       }
     });
   }
-  
+
   setOption(){
     return {
       // google map component
