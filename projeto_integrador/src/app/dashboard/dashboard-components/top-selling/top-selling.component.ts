@@ -16,6 +16,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class TopSellingComponent implements OnInit {
   public lat: any= 0;
   public long: any= 0;
+  public apiKeyValue: string = "AIzaSyAZB6RC9ZT2MO05-DfKMN7h9R0PM_Y4-YE";
   public username: string = 'user-public-notificacoes';
   public password: string = 'Za4qNXdyQNSa9YaA';
   public url: string = 'https://elasticsearch-saps.saude.gov.br/desc-esus-notifica-estado-sp/_search';
@@ -31,21 +32,15 @@ export class TopSellingComponent implements OnInit {
     let option = this.setOption();
 
     const loader = new Loader({
-      apiKey: "AIzaSyAZB6RC9ZT2MO05-DfKMN7h9R0PM_Y4-YE",
+      apiKey: this.apiKeyValue,
       version: "weekly"
     });
 
 
     loader.load().then(() => {
-      // let map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-      //   center: { lat: this.lat, lng: this.long },
-      //   zoom: 8,
-      // });
       let chartDom: any = document.getElementById('echarts-google-map');
       let chart = echarts.init(chartDom);
 
-
-      // option.series[0].data = points;
 
       chart.setOption(option);
       // get google map instance

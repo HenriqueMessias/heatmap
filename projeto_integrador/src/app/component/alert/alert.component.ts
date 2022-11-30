@@ -1,3 +1,4 @@
+import { blogcard, blogcardsFull } from './../../dashboard/dashboard-components/blog-cards/blog-cards-data';
 import { debounceTime } from 'rxjs/operators';
 import { Input, Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -18,7 +19,11 @@ export class NgbdAlertBasicComponent implements OnInit {
   @Input() public alerts: Array<IAlert> = [];
 
   private backup: Array<IAlert>;
+  blogcards:blogcard[];
+
   constructor() {
+    this.blogcards=blogcardsFull;
+
     this.alerts.push(
       {
         id: 1,
