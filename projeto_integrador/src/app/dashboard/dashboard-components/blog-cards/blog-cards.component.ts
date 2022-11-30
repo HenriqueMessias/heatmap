@@ -9,7 +9,7 @@ export class BlogCardsComponent implements OnInit {
 
   blogcards:blogcard[];
 
-  constructor() { 
+  constructor() {
 
     this.blogcards=blogcards;
   }
