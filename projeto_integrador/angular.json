@@ -106,6 +106,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ample-admin-angular:build:production",
+            "firebaseProject": "heatmap-projeto-integrador",
+            "firebaseHostingSite": "heatmap-projeto-integrador"
+          }
         }
       }
     }

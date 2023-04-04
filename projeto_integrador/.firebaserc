@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "heatmap-projeto-integrador"
-  }
+    "default": "heatmap-projeto",
+    "prod": "heatmap-projeto"
+  },
+  "targets": {},
+  "etags": {}
 }
