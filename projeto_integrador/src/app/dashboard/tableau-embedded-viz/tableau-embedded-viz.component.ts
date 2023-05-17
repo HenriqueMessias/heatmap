@@ -20,7 +20,7 @@ export class TableauEmbeddedVizComponent implements OnInit {
   public getScreenWidth: any;
   public getScreenHeight: any;
   private calculateDashboardSize = () => {
-    const bufferSize = 70;
+    const bufferSize = 60;
     this.getScreenWidth = window.innerWidth-bufferSize;
     this.getScreenHeight = window.innerHeight-bufferSize;
     console.log(this.getScreenHeight)
