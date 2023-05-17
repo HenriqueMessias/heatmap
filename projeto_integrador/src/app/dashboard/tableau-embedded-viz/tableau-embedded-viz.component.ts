@@ -20,22 +20,17 @@ export class TableauEmbeddedVizComponent implements OnInit {
   public getScreenWidth: any;
   public getScreenHeight: any;
   private calculateDashboardSize = () => {
-    const bufferSize = 35;
+    const bufferSize = 70;
     this.getScreenWidth = window.innerWidth-bufferSize;
+    this.getScreenHeight = window.innerHeight-bufferSize;
     console.log(this.getScreenHeight)
-    this.getScreenHeight = (window.innerWidth-bufferSize)*3/4;
   }
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
-    if (this.type == 'default')
-      this.calculateDashboardSize();
+    this.calculateDashboardSize();
 }
 
   ngOnInit(): void {
-    if (this.type == 'default')
-      this.calculateDashboardSize();
-    else if (this.type == 'card')
-      {this.getScreenWidth = 200
-      this.getScreenHeight = 100}
+    this.calculateDashboardSize();
   }
 }
